@@ -27,6 +27,7 @@ public class PasswordValidatorTest {
         assertEquals(SecurityLevel.MEDIUM, passwordValidator("asds1232"));
     }
 
+    //@Test(expected = IllegalArgumentException.class)
     @Test
     public void strong_when_has_letters_and_numbers_and_symbols(){
         assertEquals(SecurityLevel.STRONG, passwordValidator("asds123!"));
