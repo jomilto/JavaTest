@@ -22,4 +22,12 @@ public class MovieService {
 
         return allMovies;
     }
+
+    public Collection<Movie> findMoviesByDuration(int duration) {
+        Collection<Movie> allMovies = movieRepository.findAll()
+                .stream().filter(movie -> movie.getMinutes() <= duration)
+                .collect(Collectors.toList());
+
+        return allMovies;
+    }
 }
